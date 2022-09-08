@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collo.Basic.FunctionApp", "Collo.Basic.FunctionApp\Collo.Basic.FunctionApp.csproj", "{182A5652-8884-47FC-8A32-94510F652FF1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collo.Cloud.Services.Libraries.Shared", "Collo.Cloud.Services.Libraries.Shared\Collo.Cloud.Services.Libraries.Shared.csproj", "{745BCE03-5D24-46C5-BE00-615CC7032483}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{182A5652-8884-47FC-8A32-94510F652FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{182A5652-8884-47FC-8A32-94510F652FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{182A5652-8884-47FC-8A32-94510F652FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{745BCE03-5D24-46C5-BE00-615CC7032483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{745BCE03-5D24-46C5-BE00-615CC7032483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{745BCE03-5D24-46C5-BE00-615CC7032483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{745BCE03-5D24-46C5-BE00-615CC7032483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
