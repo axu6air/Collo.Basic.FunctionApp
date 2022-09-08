@@ -1,5 +1,7 @@
-using System.Collections.Generic;
-using System.Net;
+using Collo.Cloud.IAM.Api.Mappers;
+using Collo.Cloud.IAM.Api.Models.Organization;
+using Collo.Cloud.Services.Libraries.Shared.ApiResponse;
+using Collo.Cloud.Services.Libraries.Shared.Persistence.Services.Organizations;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
@@ -9,23 +11,20 @@ namespace Collo.Basic.FunctionApp
     public class Function1
     {
         private readonly ILogger _logger;
+        private readonly IOrganizationService _organizationService;
 
-        public Function1(ILoggerFactory loggerFactory)
+        public Function1(ILoggerFactory loggerFactory, IOrganizationService organizationService)
         {
             _logger = loggerFactory.CreateLogger<Function1>();
+            _organizationService = organizationService;
         }
 
         [Function("Function1")]
-        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req)
+        public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req)
         {
-            _logger.LogInformation("C# HTTP trigger function processed a request.");
+            var organizations = await _organizationService.GetOrganizationAsync();
 
-            var response = req.CreateResponse(HttpStatusCode.OK);
-            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-
-            response.WriteString("Welcome to Azure Functions!");
-
-            return response;
+            return await req.OkResult(CustomMapper.Mapper.Map<List<GetOrgResponseModel>>(organizations));
         }
     }
 }
