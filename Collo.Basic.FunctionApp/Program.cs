@@ -1,3 +1,14 @@
+using Collo.Cloud.Services.Libraries.Shared.B2C;
+using Collo.Cloud.Services.Libraries.Shared.Commons;
+using Collo.Cloud.Services.Libraries.Shared.Middlewares;
+using Collo.Cloud.Services.Libraries.Shared.Permission;
+using Collo.Cloud.Services.Libraries.Shared.Persistence.Data;
+using Collo.Cloud.Services.Libraries.Shared.Persistence.Services;
+using Collo.Cloud.Services.Libraries.Shared.Seeding;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+
 var host = new HostBuilder()
     .ConfigureFunctionsWorkerDefaults((builder) =>
     {
