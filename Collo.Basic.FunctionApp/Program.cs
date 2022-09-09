@@ -13,7 +13,7 @@ var host = new HostBuilder()
     .ConfigureFunctionsWorkerDefaults((builder) =>
     {
         builder.UseMiddleware<GlobalExceptionMiddleware>();
-        builder.UseMiddleware<AuthenticationMiddleware>();
+        //builder.UseMiddleware<AuthenticationMiddleware>();
         //builder.UseMiddleware<AuthorizationMiddleware>();
     })
     .ConfigureHostConfiguration(configuration =>
