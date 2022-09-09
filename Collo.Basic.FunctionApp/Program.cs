@@ -27,8 +27,6 @@ var host = new HostBuilder()
 
         services.AddDataConfigurationService("COSMOSDBCONNECTIONSETTINGS_COMMON_KV");
 
-        services.AddB2CConfigurationService("AZUREADB2CSETTINGS_KV");
-
         try
         {
             logger.LogInformation("AZUREADB2CSETTINGS_KV executing");
@@ -39,7 +37,7 @@ var host = new HostBuilder()
         catch (Exception ex)
         {
 
-            logger.LogError("AddB2CConfigurationService: " + ex.Message, ex);
+            logger.LogError("AddSeedingData: " + ex.Message, ex);
         }
 
         services.AddDomainConfigurationService();
