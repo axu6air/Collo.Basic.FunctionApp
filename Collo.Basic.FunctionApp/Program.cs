@@ -1,5 +1,4 @@
 using Collo.Cloud.Services.Libraries.Shared.B2C;
-using Collo.Cloud.Services.Libraries.Shared.KeyVault;
 using Collo.Cloud.Services.Libraries.Shared.Middlewares;
 using Collo.Cloud.Services.Libraries.Shared.Permission;
 using Collo.Cloud.Services.Libraries.Shared.Persistence.Data;
@@ -19,7 +18,7 @@ var host = new HostBuilder()
     .ConfigureHostConfiguration(configuration =>
     {
         configuration.AddJsonFile("local.settings.json", optional: true);
-        configuration.AddKeyVaultService("KEYVAULTCONFIGURATION_KV");
+        //configuration.AddKeyVaultService("KEYVAULTCONFIGURATION_KV");
     })
     .ConfigureServices((services) =>
     {
