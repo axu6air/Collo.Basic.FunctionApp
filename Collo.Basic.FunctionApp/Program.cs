@@ -67,4 +67,4 @@ var host = new HostBuilder()
     })
     .Build();
 
-host.RunAsync();
+await host.RunAsync();
